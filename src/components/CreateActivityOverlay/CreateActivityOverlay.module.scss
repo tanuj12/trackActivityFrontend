@@ -1,0 +1,127 @@
+.container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 2;
+  position: fixed;
+}
+
+.overlayCard {
+  position: relative;
+  top: 20%;
+  left: 30%;
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  min-height: 20vh;
+  border-radius: 40px;
+  border: solid 5px;
+  overflow: hidden;
+  min-width: 40vw;
+  gap: 20px;
+}
+
+.overlayHeader {
+  display: flex;
+  background-color: var(--color-secondary);
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+}
+
+.title {
+  font-size: larger;
+  color: var(--color-text);
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: transparent;
+}
+.cancleBtn {
+  position: absolute;
+  right: 20px;
+  padding: 20px;
+  font-size: larger;
+  color: var(--color-text);
+  border: none;
+  background-color: transparent;
+}
+
+.nameDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  justify-content: space-around;
+  padding: 5px;
+  padding-right: 20px;
+}
+
+.nameText {
+  font-size: large;
+  color: var(--color-text);
+  padding: 10px;
+  padding-top: 20px;
+  width: 20%;
+}
+
+.taskName {
+  width: 75%;
+  background-color: white;
+  padding: 5px;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+}
+
+.descriptionDiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding: 5px;
+  padding-right: 20px;
+}
+
+.descriptionText {
+  font-size: large;
+  color: var(--color-text);
+  padding: 10px;
+  width: 20%;
+}
+
+.description {
+  width: 75%;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  top: 0;
+  border: none;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.btnDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  margin-left: 10%;
+}
+
+.btn {
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 20px;
+  border-radius: 30px;
+  border-style: none;
+  border-color: var(--color-primary);
+}
