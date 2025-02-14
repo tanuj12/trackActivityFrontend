@@ -5,6 +5,8 @@ import { ActivityCard } from "../../components/ActivityCard/ActivityCard";
 import {
   deleteActivity,
   getAllActivities,
+  getPendingActivities,
+  markActivityAsDone,
   postActivity,
 } from "../../services/activityService";
 
@@ -13,7 +15,7 @@ export const HomePage = () => {
   const [cardsList, setCardsList] = useState([]);
   useEffect(() => {
     return async () => {
-      const response = await getAllActivities();
+      const response = await getPendingActivities();
       setCardsList(response);
     };
   }, []);
@@ -25,9 +27,10 @@ export const HomePage = () => {
     const activities = await postActivity({ task, description });
     setCardsList([...cardsList, ...activities]);
   };
-  const taskDone = (id) => {
+  const taskDone = async (index) => {
     const list = cardsList;
-    list.splice(id, 1);
+    await markActivityAsDone(list[index].id);
+    list.splice(index, 1);
     setCardsList([...list]);
   };
   const taskDelete = async (index) => {

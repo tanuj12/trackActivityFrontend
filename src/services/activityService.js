@@ -32,6 +32,18 @@ const getAllActivities = async () => {
   }
 };
 
+const markActivityAsDone = async (id) => {
+  try {
+    const response = await axios.post(
+      `http://localhost:8090/activity/done/` + id,
+      axiosConfig
+    );
+    return response.data.id;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 const deleteActivity = async (id) => {
   try {
     const response = await axios.delete(
@@ -44,4 +56,21 @@ const deleteActivity = async (id) => {
   }
 };
 
-export { postActivity, getAllActivities, deleteActivity };
+const getPendingActivities = async () => {
+  try {
+    const response = await axios.get(
+      `http://localhost:8090/activity/pending`,
+      axiosConfig
+    );
+    return response.data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+export {
+  postActivity,
+  getAllActivities,
+  deleteActivity,
+  markActivityAsDone,
+  getPendingActivities,
+};
